@@ -12,13 +12,13 @@ export default class Ball {
             x: game.ballSpeed,
             y: game.ballSpeed,
         }
-        this.size = game.ballSize;
+        this.radius = game.ballSize/2;
     }
 
     draw(ctx) {
         // ctx.drawImage(this.image, this.position.x, this.position.y, this.size, this.size);  // render an image: x pos, y pos, width, height
         ctx.beginPath();
-        ctx.arc(this.position.x, this.position.y, this.size/2, 0, 2 * Math.PI, false);
+        ctx.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI, false);
         ctx.fillStyle = "#0fc";
         ctx.fill();
         ctx.lineWidth = 1;
@@ -30,11 +30,11 @@ export default class Ball {
         this.position.x += this.speed.x;
         this.position.y += this.speed.y;
 
-        if(this.position.x > this.gameWidth - this.size/2 || this.position.x < 0 + this.size/2) {
+        if(this.position.x > this.gameWidth - this.radius || this.position.x < 0 + this.radius) {
             this.speed.x = -this.speed.x;
         }
 
-        if(this.position.y > this.gameHeight - this.size/2 || this.position.y < 0 + this.size/2) {
+        if(this.position.y > this.gameHeight - this.radius || this.position.y < 0 + this.radius) {
             this.speed.y = -this.speed.y;
         }
     }
