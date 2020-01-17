@@ -8,7 +8,7 @@ const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
 const PADDLE_SPEED = 7;
 const BALL_SIZE = 16;
-const BALL_SPEED = 3;
+const BALL_SPEED = 2;
 
 // ctx.clearRect(0, 0, 600, 800);
 /*
