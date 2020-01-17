@@ -13,8 +13,26 @@ export default class InputHandler {
                     // console.log('move right',e.keyCode);
                     paddle.moveRight();
                     break;
-            }
-        })
+            };
+        });
+
+        document.addEventListener('keyup', e => {
+            // alert(e.keyCode);
+
+            switch(e.keyCode) {
+                case 37:
+                    if(paddle.speed < 0){
+                        paddle.stop();
+                    }
+                    break;
+                case 39:
+                    // console.log('move right',e.keyCode);
+                    if(paddle.speed > 0) {
+                        paddle.stop();
+                    }
+                    break;
+            };
+        });
     }
 
 }
