@@ -7,7 +7,7 @@ const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
 const PADDLE_SPEED = 7;
 const BALL_SIZE = 16;
-const BALL_SPEED = 2;
+const BALL_SPEED = 3;
 
 let game = new Game(GAME_WIDTH, GAME_HEIGHT, PADDLE_SPEED, BALL_SIZE, BALL_SPEED);
 
