@@ -7,14 +7,14 @@ export default class Ball {
         this.gameHeight = game.gameHeight;
         this.game = game;
         this.position = {
-            x: 10,
-            y: 10,
+            x: (game.gameWidth / 2) - (game.ballSize / 2) + (Math.floor(Math.random() * 20) +1),
+            y: (game.gameHeight - 75),
         }
         this.speed = {
             x: game.ballSpeed,
             y: game.ballSpeed,
         }
-        this.radius = game.ballSize/2;
+        this.radius = game.ballSize / 2;
     }
 
     draw(ctx) {
@@ -32,17 +32,17 @@ export default class Ball {
         this.position.y += this.speed.y;
 
         // wall on left or right
-        if(this.position.x > this.gameWidth - this.radius || this.position.x < 0 + this.radius) {
+        if( this.position.x > this.gameWidth - this.radius || this.position.x < 0 + this.radius ) {
             this.speed.x = -this.speed.x;
         }
 
         // wall on top or bottom
-        if(this.position.y > this.gameHeight - this.radius || this.position.y < 0 + this.radius) {
+        if( this.position.y > this.gameHeight - this.radius || this.position.y < 0 + this.radius ) {
             this.speed.y = -this.speed.y;
         }
 
         // collision detection with paddles
-        if(detectCollision(this, this.game.paddle)) {
+        if( detectCollision( this, this.game.paddle )) {
             this.speed.y = -this.speed.y;
             this.position.y = this.game.paddle.position.y - this.radius;
         }
