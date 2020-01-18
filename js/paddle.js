@@ -25,12 +25,11 @@ export default class Paddle {
     draw(ctx) {
         ctx.fillStyle = "#0cf";
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+        // ctx.fillRect(0,0, this.width, this.height);
     }
 
     // dt = delta time
     update(dt) {
-        // if (!dt) return;
-        // this.position.x += 5 / dt;
         this.position.x += this.speed;
 
         // setting bounds for paddle
