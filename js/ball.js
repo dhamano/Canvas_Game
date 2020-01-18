@@ -22,10 +22,7 @@ export default class Ball {
             x: (this.gameWidth / 2) - (this.radius) + (Math.floor(Math.random() * 20) +1),
             y: (this.gameHeight - 75),
         }
-        this.game.paddle.position = {
-            x: this.gameWidth / 2 - this.game.paddle.width / 2,
-            y: this.gameHeight - this.game.paddle.height - 10,
-        }
+        this.game.paddle.reset();
     }
 
     draw(ctx) {

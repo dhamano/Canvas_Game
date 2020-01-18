@@ -14,6 +14,13 @@ export default class Paddle {
         }
     }
 
+    reset() {
+        this.position = {
+            x: this.gameWidth / 2 - this.width / 2,
+            y: this.gameHeight - this.height - 10,
+        }
+    }
+
     moveLeft() {
         this.speed = -this.maxSpeed;
     }
