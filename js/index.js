@@ -11,8 +11,6 @@ const BALL_SPEED = 3;
 
 let game = new Game(GAME_WIDTH, GAME_HEIGHT, PADDLE_SPEED, BALL_SIZE, BALL_SPEED);
 
-game.init();
-
 let lastTime = 0;
 
 function gameLoop(timestamp) {
