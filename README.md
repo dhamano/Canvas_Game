@@ -1,10 +1,9 @@
 # Intro to Games with Vanilla JS
 
-This is a small project to follow along a tutorial on an intro to JS games.
-I took the liberty of not following the tutorial exactly and figuring some things
-out for myself.
+This is a small follow along project tutorial. I took the liberty of not following
+the tutorial exactly and figuring some things out for myself.
 
-There are bugs galore but was an interesting introduction. The purpose of doing
+There are bugs galore but it was an interesting introduction. The purpose of doing
 this was to stretch myself and to have a better idea of what is going on under-the-hood
 before I dipped into gaming libraries.
 
