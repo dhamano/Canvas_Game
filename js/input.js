@@ -12,6 +12,9 @@ export default class InputHandler {
                 case 27: // esc key
                     game.togglePause();
                     break;
+                case 32: // spacebar
+                    game.start();
+                    break;
             };
         });
 

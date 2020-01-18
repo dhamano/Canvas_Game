@@ -17,6 +17,14 @@ export default class Ball {
         this.radius = game.ballSize / 2;
     }
 
+    reset() {
+        this.position = {
+            x: (this.gameWidth / 2) - (this.radius) + (Math.floor(Math.random() * 20) +1),
+            y: (this.gameHeight - 75),
+        }
+        this.game.paddle.reset();
+    }
+
     draw(ctx) {
         ctx.beginPath();
         ctx.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI, false);
@@ -36,9 +44,15 @@ export default class Ball {
             this.speed.x = -this.speed.x;
         }
 
-        // wall on top or bottom
-        if( this.position.y > this.gameHeight - this.radius || this.position.y < 0 + this.radius ) {
+        // wall on top
+        if( this.position.y < 0 + this.radius ) {
             this.speed.y = -this.speed.y;
+        }
+
+        // wall of bottom
+        if ( this.position.y > this.gameHeight - this.radius ) {
+            this.game.lives--;
+            this.reset();
         }
 
         // collision detection with paddles
